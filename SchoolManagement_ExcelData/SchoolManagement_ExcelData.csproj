@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="aboutus.png" />
+    <None Remove="AI&amp;ML.png" />
+    <None Remove="BackEnd.png" />
+    <None Remove="childSchool.png" />
+    <None Remove="compatative programming.png" />
+    <None Remove="Crypto.png" />
+    <None Remove="DeepLearning.png" />
+    <None Remove="Dr Anna.png" />
+    <None Remove="Dr Bhushan.png" />
+    <None Remove="Dr Daya.png" />
+    <None Remove="Dr Mohan kumar.png" />
+    <None Remove="DS.png" />
+    <None Remove="facebook.png" />
+    <None Remove="FrontEnd.png" />
+    <None Remove="Gate.png" />
+    <None Remove="LKSNLOGO.jpeg" />
+    <None Remove="LKSNNAME.jpeg" />
+    <None Remove="Ltts1.jpg" />
+    <None Remove="MAth.png" />
+    <None Remove="netcore.png" />
+    <None Remove="School.jpg" />
+    <None Remove="youtube.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignInXamlToolkitAddOns" Version="0.0.4" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1000" />
+    <PackageReference Include="Microsoft.Win32" Version="2.0.1" />
+    <PackageReference Include="Simplify.Windows.Forms" Version="1.1.2" />
+    <PackageReference Include="Syncfusion.XlsIO.Wpf" Version="20.1.0.47" />
+    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="System.Reactive.Windows.Forms" Version="5.0.0" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="aboutus.png" />
+    <Resource Include="AI&amp;ML.png" />
+    <Resource Include="BackEnd.png" />
+    <Resource Include="childSchool.png" />
+    <Resource Include="compatative programming.png" />
+    <Resource Include="Crypto.png" />
+    <Resource Include="DeepLearning.png" />
+    <Resource Include="Dr Anna.png" />
+    <Resource Include="Dr Bhushan.png" />
+    <Resource Include="Dr Daya.png" />
+    <Resource Include="Dr Mohan kumar.png" />
+    <Resource Include="DS.png" />
+    <Resource Include="facebook.png" />
+    <Resource Include="FrontEnd.png" />
+    <Resource Include="Gate.png" />
+    <Resource Include="LKSNLOGO.jpeg" />
+    <Resource Include="LKSNNAME.jpeg" />
+    <Resource Include="Ltts1.jpg" />
+    <Resource Include="MAth.png" />
+    <Resource Include="netcore.png" />
+    <Resource Include="School.jpg" />
+    <Resource Include="youtube.png" />
+  </ItemGroup>
+
+</Project>

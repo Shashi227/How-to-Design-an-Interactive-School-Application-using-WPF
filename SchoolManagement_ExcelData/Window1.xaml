@@ -1,0 +1,107 @@
+﻿<Window x:Class="SchoolManagement_ExcelData.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolManagement_ExcelData"
+        mc:Ignorable="d"
+        Title="Window1" Height="483" Width="1095">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="MyStyle1">
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+
+        <Style  TargetType="Button" x:Key="MyStyle2">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+
+        <Style  TargetType="Button" x:Key="MyStyle3">
+            <Setter Property="Background" Value="Yellow"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+
+        <Style  TargetType="Button" x:Key="MyStyle4">
+            <Setter Property="Background" Value="Cyan"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+
+        <Style  TargetType="Button" x:Key="MyStyle5">
+            <Setter Property="Background" Value="DeepPink"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+
+        <Style  TargetType="Button" x:Key="MyStyle6">
+            <Setter Property="Background" Value="Turquoise"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+
+
+
+    </Window.Resources>
+
+    <Grid Background="LightCyan" HorizontalAlignment="Left" Width="1086">
+        <Label Content="Student ID" HorizontalAlignment="Left" Margin="142,60,0,0" VerticalAlignment="Top" Width="113" Height="37"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="142,97,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="142,148,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label Content="Phone No" HorizontalAlignment="Left" Margin="142,192,0,0" VerticalAlignment="Top" Height="28" Width="110"/>
+        <Label Content="DOB" HorizontalAlignment="Left" Margin="142,237,0,0" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="std_id" HorizontalAlignment="Left" Height="23" Margin="255,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="107"/>
+        <TextBox x:Name="std_name" HorizontalAlignment="Left" Height="23" Margin="255,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="107"/>
+        <TextBox x:Name="std_phoneno" HorizontalAlignment="Left" Height="23" Margin="255,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="107"/>
+        <DatePicker x:Name="std_dob" HorizontalAlignment="Left" Margin="255,240,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="std_email" HorizontalAlignment="Left" Height="23" Margin="255,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="107" RenderTransformOrigin="-0.317,-0.272"/>
+        <Button x:Name="add_btn" Content="Add" Style="{StaticResource MyStyle1}" HorizontalAlignment="Left" Margin="142,304,0,0" VerticalAlignment="Top" Width="75" Click="add_btn_click"/>
+        <Button x:Name="delete_btn" Content="Delete" Style="{StaticResource MyStyle2}"  HorizontalAlignment="Left" Margin="255,304,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.037,0.512" Click="delete_btn_click"/>
+        <Button x:Name="update_btn" Content="Update" Style="{StaticResource MyStyle3}" HorizontalAlignment="Left" Margin="362,304,0,0" VerticalAlignment="Top" Width="75" Click="update_btn_click" />
+        <Button x:Name="reset_btn" Content="Reset" Style="{StaticResource MyStyle4}" HorizontalAlignment="Left" Margin="255,359,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.487,1.575" Click="reset_btn_click"/>
+        <Button x:Name="save_btn" Content="Save" Style="{StaticResource MyStyle5}" HorizontalAlignment="Left" Margin="142,359,0,0" VerticalAlignment="Top" Width="75" Click="save_btn_click"/>
+        <GroupBox Header="Student Information"  HorizontalAlignment="Left" Height="268" Margin="84,10,0,0" VerticalAlignment="Top" Width="384"/>
+        <Button x:Name="create_excel_btn" Content="Open Xaml" Style="{StaticResource MyStyle2}" HorizontalAlignment="Left" Margin="344,10,0,0" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.4,1.962" Click="btnCreate_Click"/>
+        <DockPanel HorizontalAlignment="Left" Height="73" LastChildFill="False" Margin="473,10,0,0" VerticalAlignment="Top" Width="603"/>
+
+
+        <DataGrid Name="dataGridStudent" AutoGenerateColumns="False" ColumnWidth="*"  RowBackground="WhiteSmoke"  
+                   CellEditEnding="dataGridStudent_CellEditEnding" RowEditEnding="dataGridStudent_RowEditEnding"  
+                   SelectionChanged="dataGridStudent_SelectionChanged" Grid.Row="2" Background="LightBlue" Margin="473,88,10,27">
+            <!-- font color / style of colour heading-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn x:Name="Student_ID" Header="Student_ID" MinWidth="90" Binding="{Binding Student_ID}" />
+                <DataGridTextColumn x:Name="Name" Header="Name" MinWidth="120" Binding="{Binding Name}" />
+                <DataGridTextColumn x:Name="Email" Header="Email" MinWidth="150" Binding="{Binding Email}"/>
+                <DataGridTextColumn x:Name="PhoneNO" Header="PhoneNo" MinWidth="120" Binding="{Binding PhoneNO}" />
+                <DataGridTextColumn x:Name="DOB" Header="DOB" MinWidth="80" Binding="{Binding DOB}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+
+
+        <Button Content="Student Data" Style="{StaticResource MyStyle2}" HorizontalAlignment="Left" Margin="899,10,0,0" VerticalAlignment="Top" Width="121" Height="68" Click="Button_Click">
+
+        </Button>
+        <Button x:Name="second_window" Content="GoTO Second Window"  Style="{StaticResource MyStyle6}" HorizontalAlignment="Left" Margin="292,394,0,0" VerticalAlignment="Top" Width="145" Height="46" Click="Second_window" />
+        <Button x:Name="First_Window" Content="GoTO First Window" Style="{StaticResource MyStyle6}" HorizontalAlignment="Left" Margin="142,394,0,0" VerticalAlignment="Top" Width="134" Height="46" Click="First_Window_Click"/>
+
+
+
+    </Grid>
+</Window>
